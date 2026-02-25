@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="pRemoveTags" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unibo.musicality.controller.AdminController">
+   <children>
+      <Pane id="popUp" fx:id="pNewAdmin" layoutX="19.0" layoutY="87.0" prefHeight="114.0" prefWidth="313.0" stylesheets="@style.css">
+         <children>
+            <Label layoutX="14.0" layoutY="15.0" text="Email Nuovo Admin:" />
+            <Label layoutX="14.0" layoutY="52.0" text="Codice Nuovo Admin:" />
+            <TextField fx:id="tfNewAdminCode" layoutX="141.0" layoutY="45.0" prefHeight="29.0" prefWidth="163.0" />
+            <Button layoutX="265.0" layoutY="81.0" mnemonicParsing="false" onAction="#onCreateNewAdmin" text="Crea" />
+            <ChoiceBox fx:id="cbNewAdminEmail" layoutX="141.0" layoutY="9.0" prefHeight="29.0" prefWidth="163.0" />
+         </children>
+      </Pane>
+      <Button fx:id="btnNewAdmin" layoutX="19.0" layoutY="14.0" mnemonicParsing="false" onAction="#onShowNewAdmin" prefHeight="26.0" prefWidth="141.0" text="Nuovo Admin" />
+      <Button fx:id="btnRewiewLyrics" layoutX="170.0" layoutY="48.0" mnemonicParsing="false" onAction="#onShowRewiewLyrics" prefHeight="26.0" prefWidth="141.0" text="Revisiona Testi" />
+      <Button fx:id="btnRemoveTag" layoutX="170.0" layoutY="14.0" mnemonicParsing="false" onAction="#onShowRemoveTags" prefHeight="26.0" prefWidth="141.0" text="Rimuovi Tag" />
+      <Button fx:id="btnBlockUser" layoutX="19.0" layoutY="48.0" mnemonicParsing="false" onAction="#onShowUserBlock" text="Blocca/Sblocca Utente" />
+      <Button fx:id="btnModifyPrices" layoutX="321.0" layoutY="14.0" mnemonicParsing="false" onAction="#onShowUpdatePrice" text="Modifica Prezzi Abbonamenti" />
+      <Pane id="popUp" fx:id="pRemoveTags" layoutX="19.0" layoutY="87.0" prefHeight="185.0" prefWidth="231.0" stylesheets="@style.css" visible="false">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Seleiona i tag da rimuovere" />
+            <Button layoutX="14.0" layoutY="148.0" mnemonicParsing="false" onAction="#onDeleteTags" text="Elimina" />
+            <ListView fx:id="lvAllTags" layoutX="14.0" layoutY="40.0" prefHeight="95.0" prefWidth="201.0" />
+         </children>
+      </Pane>
+      <Pane id="popUp" fx:id="pRewiewLyrics" layoutX="19.0" layoutY="87.0" prefHeight="297.0" prefWidth="319.0" stylesheets="@style.css" visible="false">
+         <children>
+            <ChoiceBox fx:id="cbSelectLyrics" layoutX="15.0" layoutY="31.0" onAction="#onLyricsSelected" prefWidth="150.0" />
+            <Label layoutX="15.0" layoutY="14.0" text="Seleziona il testo" />
+            <TextArea fx:id="taShowLyrics" editable="false" layoutX="15.0" layoutY="67.0" prefHeight="185.0" prefWidth="290.0" />
+            <Button layoutX="14.0" layoutY="260.0" mnemonicParsing="false" onAction="#onApproveLyrics" text="Approva" />
+            <Label layoutX="173.0" layoutY="14.0" text="Autore:" />
+            <ChoiceBox fx:id="cbLyricsAuthor" disable="true" layoutX="173.0" layoutY="31.0" prefHeight="26.0" prefWidth="131.0" />
+         </children>
+      </Pane>
+      <Pane id="popUp" fx:id="pUserBlock" layoutX="19.0" layoutY="87.0" prefHeight="121.0" prefWidth="241.0" stylesheets="@style.css" visible="false">
+         <children>
+            <Label layoutX="14.0" layoutY="18.0" text="Cerca Email:" />
+            <TextField fx:id="tfUserSearch" layoutX="105.0" layoutY="11.0" onKeyTyped="#onSearching" prefHeight="29.0" prefWidth="122.0" />
+            <Label layoutX="13.0" layoutY="53.0" text="Seleziona:" />
+            <Button fx:id="btnBlock" layoutX="176.0" layoutY="86.0" mnemonicParsing="false" onAction="#onBlockUser" text="Blocca" />
+            <Button fx:id="btnUnlock" layoutX="11.0" layoutY="86.0" mnemonicParsing="false" onAction="#onUnlockUser" text="Sblocca" />
+            <ChoiceBox fx:id="cbUserSelect" layoutX="105.0" layoutY="48.0" onAction="#onSelectUser" prefHeight="23.0" prefWidth="122.0" />
+         </children>
+      </Pane>
+      <Pane id="popUp" fx:id="pUpdatePrice" layoutX="19.0" layoutY="87.0" prefHeight="179.0" prefWidth="176.0" stylesheets="@style.css" visible="false">
+         <children>
+            <ChoiceBox fx:id="cbPlanType" layoutX="13.0" layoutY="35.0" prefHeight="29.0" prefWidth="150.0" />
+            <Label layoutX="14.0" layoutY="14.0" text="Seleziona il Piano:" />
+            <Label layoutX="14.0" layoutY="78.0" text="Prezzo:" />
+            <TextField fx:id="tfPlanPrice" layoutX="66.0" layoutY="73.0" prefHeight="26.0" prefWidth="97.0" />
+            <Label layoutX="13.0" layoutY="114.0" text="Sconto:" />
+            <TextField fx:id="tfDiscountPrice" layoutX="66.0" layoutY="108.0" prefHeight="26.0" prefWidth="97.0" />
+            <Button layoutX="101.0" layoutY="143.0" mnemonicParsing="false" onAction="#onUpdatePrice" text="Aggiorna" />
+         </children>
+      </Pane>
+      <Pane id="popUp" fx:id="pAdminLock" prefHeight="394.0" prefWidth="600.0" stylesheets="@style.css" visible="false">
+         <children>
+            <Label layoutX="216.0" layoutY="134.0" text="Inserire codice Amministratore:" />
+            <TextField fx:id="tfAdminCode" layoutX="216.0" layoutY="151.0" prefHeight="26.0" prefWidth="91.0" />
+            <Button fx:id="btnGo" layoutX="316.0" layoutY="151.0" mnemonicParsing="false" onAction="#onOpenAdminSettings" prefHeight="26.0" prefWidth="68.0" text="Vai" />
+         </children>
+      </Pane>
+   </children>
+</Pane>

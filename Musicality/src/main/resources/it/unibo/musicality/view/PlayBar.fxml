@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox fx:id="playBar"
+      fx:controller="it.unibo.musicality.controller.PlayBarController"
+      xmlns="http://javafx.com/javafx/23" 
+      xmlns:fx="http://javafx.com/fxml/1"
+      alignment="CENTER"
+      spacing="12"
+      style="-fx-background-color: #333; -fx-padding: 10;"
+      visible="false"
+      managed="false"
+      stylesheets="@style.css">
+ 
+    <Button fx:id="btnPrev" text="⏮"/>
+    <Button fx:id="btnPlayPause" text="⏯"/>
+    <Button fx:id="btnNext" text="⏭"/>
+    <Slider fx:id="sProgress" prefWidth="180"/>
+    <Label fx:id="lTime" text="00:00 / 00:00" style="-fx-text-fill: white;"/>
+    <Slider fx:id="sVolume" prefWidth="90"/>
+    <Button fx:id="btnLyrics" text="🎤"/>
+    <Button fx:id="btnReview" text="⭐"/>
+</HBox>

@@ -1,0 +1,366 @@
+/* ============================
+   GLOBAL
+============================ */
+.root {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-font-size: 12px; 
+    -fx-background-color: #1b1b1b;
+    -fx-text-fill: #eeeeee;
+}
+
+.label {
+    -fx-text-fill: #dddddd;
+    -fx-font-size: 12px;
+}
+
+/* ============================
+   BUTTONS
+============================ */
+.button {
+    -fx-font-size: 12px;
+    -fx-padding: 4 8;          
+    -fx-background-radius: 4;  
+    -fx-background-color: #3a7bd5;
+    -fx-border-radius: 4;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+.button:hover {
+    -fx-background-color: #5a9df2;
+}
+.button:pressed {
+    -fx-background-color: #2c5aa0;
+}
+
+.equal-button {
+    -fx-pref-height: 25px;
+    -fx-max-width: infinity;
+}
+
+.icon-button {
+    -fx-font-size: 12px;
+    -fx-padding: 2 6;
+    -fx-background-radius: 50%;
+    -fx-background-color: transparent;
+    -fx-text-fill: #bbbbbb;
+    -fx-cursor: hand;
+}
+.icon-button:hover {
+    -fx-text-fill: #3a7bd5;
+}
+.icon-button:pressed {
+    -fx-text-fill: #2c5aa0;
+}
+
+/* ============================
+   POPUP WINDOWS
+============================ */
+#popUp {
+    -fx-background-color: #2a2a2a;
+    -fx-border-color: #3a7bd5;
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 8;  
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0, 0, 2);
+}
+
+/* ============================
+   TABPANE
+============================ */
+.tab-pane {
+    -fx-background-color: #1b1b1b;
+}
+.tab-header-background {
+    -fx-background-color: #111111;
+}
+.tab {
+    -fx-background-color: transparent;
+    -fx-text-base-color: #aaaaaa;
+    -fx-padding: 4 8;  
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+.tab:hover {
+    -fx-background-color: #222222;
+}
+.tab:selected {
+    -fx-background-color: #3a7bd5;
+    -fx-background-radius: 4 4 0 0;
+    -fx-text-base-color: white;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+/* ============================
+   LISTVIEW
+============================ */
+.list-view {
+    -fx-background-color: #2a2a2a;
+    -fx-control-inner-background: #2a2a2a;
+    -fx-border-color: #444;
+    -fx-border-width: 1;
+    -fx-border-radius: 4;
+    -fx-padding: 3;
+}
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #dddddd;
+    -fx-padding: 4 6;
+    -fx-font-size: 12px;
+}
+.list-cell:hover {
+    -fx-background-color: #333333;
+}
+.list-cell:filled:selected {
+    -fx-background-color: #3a7bd5;
+    -fx-text-fill: white;
+}
+
+/* ============================
+   TEXTFIELDS & AREAS
+============================ */
+.text-field, .password-field, .text-area {
+    -fx-background-color: #2a2a2a;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #888888;
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+    -fx-border-color: #444;
+    -fx-border-width: 1;
+    -fx-padding: 4 6;
+    -fx-font-size: 12px;
+}
+.text-field:focused, .password-field:focused, .text-area:focused {
+    -fx-border-color: #3a7bd5;
+}
+
+/* ============================
+   PLAYBAR
+============================ */
+#playBar {
+    -fx-background-color: #111111;
+    -fx-padding: 4;
+}
+#playBar .button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #eeeeee;
+    -fx-font-size: 14px;
+}
+#playBar .button:hover {
+    -fx-text-fill: #3a7bd5;
+}
+#playBar .slider .track {
+    -fx-background-color: #444;
+}
+#playBar .slider .thumb {
+    -fx-background-color: #3a7bd5;
+}
+
+/* ============================
+   SCROLLPANE
+============================ */
+.scroll-pane {
+    -fx-background: #1b1b1b;
+}
+.scroll-pane .viewport {
+    -fx-background-color: #1b1b1b;
+}
+
+/* ============================
+   SCROLLBAR
+============================ */
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical {
+    -fx-pref-width: 8px; 
+}
+.scroll-bar:horizontal {
+    -fx-pref-height: 8px; 
+}
+
+/* Track (binario) */
+.scroll-bar .track {
+    -fx-background-color: #1b1b1b;
+    -fx-background-radius: 4;
+}
+
+/* Thumb (parte che si muove) */
+.scroll-bar .thumb {
+    -fx-background-color: #3a7bd5; 
+    -fx-background-radius: 4;
+}
+.scroll-bar .thumb:hover {
+    -fx-background-color: #5a9df2; 
+}
+.scroll-bar .thumb:pressed {
+    -fx-background-color: #2c5aa0; 
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-shape: "";
+}
+
+
+/* ============================
+   CHOICEBOX
+============================ */
+.choice-box {
+    -fx-background-color: #2a2a2a;
+    -fx-background-radius: 4;
+    -fx-border-color: #444;
+    -fx-border-radius: 4;
+    -fx-border-width: 1;
+    -fx-padding: 2 6;          
+    -fx-text-fill: #eeeeee;
+    -fx-font-size: 12px;
+    -fx-pref-height: 24px;     
+}
+
+.choice-box:hover {
+    -fx-border-color: #3a7bd5; 
+}
+
+.choice-box:focused {
+    -fx-border-color: #3a7bd5;
+    -fx-background-color: #333333;
+}
+
+.choice-box > .label {
+    -fx-text-fill: #eeeeee;
+}
+
+.choice-box .arrow {
+    -fx-padding: 0;             
+    -fx-background-color: #eeeeee;
+    -fx-shape: "M0 0 L4 4 L8 0 Z";
+}
+.choice-box:hover .arrow {
+    -fx-background-color: #3a7bd5;
+}
+
+/* ============================
+   CHOICEBOX DROPDOWN
+============================ */
+.choice-box .context-menu {
+    -fx-background-color: #2a2a2a;
+    -fx-border-color: #3a7bd5;
+    -fx-border-radius: 4;
+}
+
+/* Voci della tendina */
+.choice-box .menu-item {
+    -fx-background-color: transparent;
+    -fx-text-fill: #dddddd;
+    -fx-padding: 4 8;
+}
+.choice-box .menu-item:hover {
+    -fx-background-color: #3a7bd5;
+    -fx-text-fill: white;
+}
+
+/* ============================
+   TEXTAREA
+============================ */
+.text-area {
+    -fx-control-inner-background: #2a2a2a; 
+    -fx-background-color: #333333;          
+    -fx-text-fill: #eeeeee;               
+    -fx-font-size: 12px;
+    -fx-font-family: 'Segoe UI', Arial;
+    -fx-padding: 6;                        
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-border-color: #444;
+    -fx-border-width: 1;
+}
+
+.text-area:focused {
+    -fx-border-color: #3a7bd5; 
+}
+
+.text-area .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+.text-area .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.text-area .thumb {
+    -fx-background-color: #3a7bd5; 
+    -fx-background-radius: 4;
+}
+
+.text-area .track {
+    -fx-background-color: #2a2a2a;
+    -fx-background-radius: 4;
+}
+
+/* ============================
+   CHECKBOX
+============================ */
+.check-box {
+    -fx-text-fill: #eeeeee;
+    -fx-font-size: 12px;
+}
+
+.check-box .box {
+    -fx-background-color: #2a2a2a;
+    -fx-border-color: #444;
+    -fx-border-width: 1;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-padding: 2;
+}
+
+.check-box:hover .box {
+    -fx-border-color: #3a7bd5;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #3a7bd5;
+    -fx-border-color: #3a7bd5;
+}
+
+.check-box .mark {
+    -fx-background-color: white;
+    -fx-background-insets: 2;
+    -fx-background-radius: 2;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: white;
+}
+
+/* ============================
+   FORMS
+============================ */
+.form-input {
+    -fx-pref-height: 30px;
+    -fx-max-width: 220px;
+}
+
+.form-label {
+    -fx-min-width: 140px;
+    -fx-alignment: CENTER_RIGHT;
+}
+
+#spLyrics {
+    -fx-fit-to-width: true;
+    -fx-fit-to-height: true;
+}
+
+#tfLyrics {
+    -fx-padding: 40 70 0 70; /* top right bottom left */
+    -fx-text-alignment: center;
+}

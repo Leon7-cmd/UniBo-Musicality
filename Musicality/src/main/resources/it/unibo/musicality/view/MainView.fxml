@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="root" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="it.unibo.musicality.controller.MainController" stylesheets="@style.css">
+
+    <center>
+        <StackPane fx:id="centerStack">
+            <!-- Main tabs -->
+            <TabPane fx:id="tbMain" tabClosingPolicy="UNAVAILABLE">
+                <tabs>
+                    <Tab fx:id="SearchView" text="Cerca">
+                        <fx:include source="SearchView.fxml"/>
+                    </Tab>
+                    <Tab fx:id="PlaylistView" text="Playlist">
+                        <fx:include source="PlaylistView.fxml"/>
+                    </Tab>
+                    <Tab fx:id="StatisticsView" text="Statistiche">
+                        <fx:include source="StatisticsView.fxml"/>
+                    </Tab>
+                    <Tab fx:id="ProfileView" text="Profilo">
+                        <fx:include source="ProfileView.fxml"/>
+                    </Tab>
+                    <Tab fx:id="ContentView" text="Aggiungi Contenuto">
+                        <fx:include source="ContentView.fxml"/>
+                    </Tab>
+                    <Tab fx:id="AdminView" text="Admin">
+                        <fx:include source="AdminView.fxml"/>
+                    </Tab>
+                </tabs>
+            </TabPane>
+
+            <!-- Lyrics overlay, initially hidden -->
+            <Pane fx:id="pLyricsOverlay" style="-fx-background-color: rgba(0, 0, 0, 0.93);" visible="false" managed="false" StackPane.alignment="CENTER">
+                <ScrollPane fx:id="spLyrics" fitToWidth="true" vbarPolicy="NEVER" hbarPolicy="NEVER" prefWidth="600" prefHeight="400">
+                    <content>
+                        <TextFlow fx:id="tfLyrics" lineSpacing="5" style="-fx-font-size: 16px; -fx-text-alignment: center;"/>
+                    </content>
+                </ScrollPane>
+            </Pane>
+        </StackPane>
+    </center>
+
+    <bottom>
+        <fx:include fx:id="playBar" source="PlayBar.fxml"/>
+    </bottom>
+</BorderPane>

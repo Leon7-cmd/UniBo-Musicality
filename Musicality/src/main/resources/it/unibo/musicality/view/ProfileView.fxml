@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unibo.musicality.controller.ProfileController" stylesheets="@style.css">
+   <children>
+      <Pane id="popUp" layoutX="14.0" layoutY="14.0" prefHeight="236.0" prefWidth="239.0" stylesheets="@style.css">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Dati Utente:" underline="true" />
+            <Label layoutX="14.0" layoutY="42.0" prefHeight="17.0" prefWidth="80.0" text="Username:" />
+            <TextField fx:id="tfUsername" layoutX="98.0" layoutY="37.0" prefHeight="26.0" prefWidth="125.0" />
+            <Label layoutX="14.0" layoutY="166.0" prefHeight="17.0" prefWidth="80.0" text="Tipo Utente:" />
+            <TextField fx:id="tfProfileType" editable="false" layoutX="99.0" layoutY="161.0" prefHeight="26.0" prefWidth="125.0" />
+            <Label layoutX="14.0" layoutY="135.0" prefHeight="17.0" prefWidth="42.0" text="Email:" />
+            <TextField fx:id="tfEmail" editable="false" layoutX="99.0" layoutY="130.0" prefHeight="26.0" prefWidth="125.0" />
+            <Label layoutX="14.0" layoutY="104.0" prefHeight="17.0" prefWidth="66.0" text="Cognome:" />
+            <TextField fx:id="tfSurname" editable="false" layoutX="99.0" layoutY="99.0" prefHeight="26.0" prefWidth="125.0" />
+            <Label layoutX="15.0" layoutY="73.0" prefHeight="17.0" prefWidth="42.0" text="Nome:" />
+            <TextField fx:id="tfName" editable="false" layoutX="99.0" layoutY="68.0" prefHeight="26.0" prefWidth="125.0" />
+            <Button layoutX="9.0" layoutY="197.0" mnemonicParsing="false" onAction="#onUpdateProfile" text="Update" />
+         </children>
+      </Pane>
+      <Pane id="popUp" layoutX="14.0" layoutY="263.0" prefHeight="85.0" prefWidth="239.0" stylesheets="@style.css">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Abbonamento:" underline="true" />
+            <Button layoutX="14.0" layoutY="43.0" mnemonicParsing="false" onAction="#onChangeSubscription" text="Gestisci Abbonamento" />
+         </children>
+      </Pane>
+      <Button fx:id="btnChangeProfile" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#onChangeProfileType"/>
+      <Pane id="popUp" fx:id="pChangePlan" layoutX="310.0" layoutY="14.0" prefHeight="157.0" prefWidth="239.0" stylesheets="@style.css">
+         <children>
+            <TextField fx:id="tfCurrentSubscription" editable="false" layoutX="65.0" layoutY="41.0" />
+            <Label layoutX="14.0" layoutY="46.0" text="Attuale:" />
+            <Label layoutX="14.0" layoutY="14.0" text="Cambia Abbonamento:" />
+            <Label layoutX="14.0" layoutY="81.0" text="Nuovo:" />
+            <ChoiceBox fx:id="cbPlanSelection" layoutX="64.0" layoutY="77.0" prefHeight="17.0" prefWidth="159.0" />
+            <Button layoutX="14.0" layoutY="114.0" mnemonicParsing="false" onAction="#onChangePlan" text="Cambia" />
+         </children>
+      </Pane>
+      <Button layoutX="546.0" layoutY="361.0" mnemonicParsing="false" onAction="#onLogout" text="Esci" />
+   </children>
+</Pane>

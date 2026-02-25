@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unibo.musicality.controller.SearchController">
+   <children>
+      <Label layoutX="14.0" layoutY="17.0" text="Cerca:" />
+      <ListView fx:id="lvSearchResult" layoutX="14.0" layoutY="54.0" prefHeight="329.0" prefWidth="230.0" />
+      <TextField fx:id="tfSearchString" layoutX="56.0" layoutY="13.0" onKeyReleased="#onSearchContent" prefHeight="26.0" prefWidth="335.0" />
+      <Label layoutX="400.0" layoutY="17.0" text="Tipo:" />
+      <ChoiceBox fx:id="cbSearchType" layoutX="436.0" layoutY="13.0" onAction="#onSearchContent" prefWidth="150.0" />
+      <Pane id="popUp" fx:id="pPlaylistSelected" layoutX="262.0" layoutY="54.0" prefHeight="329.0" prefWidth="324.0" stylesheets="@style.css">
+         <children>
+            <Label fx:id="lPlaylistName" layoutX="14.0" layoutY="14.0" text="PlaylistName">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="41.0" text="Descrizione:" />
+            <Label fx:id="lPlaylistDescription" alignment="TOP_LEFT" layoutX="14.0" layoutY="58.0" prefHeight="52.0" prefWidth="294.0" text="PlaylistDescription" textAlignment="CENTER" />
+            <ListView fx:id="lvPlaylistList" layoutX="14.0" layoutY="121.0" prefHeight="194.0" prefWidth="294.0" />
+            <Button layoutX="284.0" layoutY="22.0" mnemonicParsing="false" onAction="#onStartPlaylist" text="▶" />
+            <Label fx:id="lHiddenId" layoutX="282.0" layoutY="50.0" />
+         </children>
+      </Pane>
+   </children>
+</Pane>
