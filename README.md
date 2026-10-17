@@ -1,45 +1,71 @@
 # 🎵 Musicality
 
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=java&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
+![JavaFX](https://img.shields.io/badge/JavaFX-4285F4?style=flat-square&logo=java&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-00000F?style=flat-square&logo=mysql&logoColor=white)
+![Maven](https://img.shields.io/badge/Maven-C71A36?style=flat-square&logo=apachemaven&logoColor=white)
+![Security: BCrypt](https://img.shields.io/badge/Security-BCrypt-4CAF50?style=flat-square)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)
 
-> *Una piattaforma desktop completa per lo streaming e la valutazione multidimensionale di musica e podcast.*
+> *A full-featured desktop platform for streaming, playlist curation, and music and podcast evaluations.*
 
-## 🌟 Punti chiave
+## 🌟 Key Highlights
 
-- **Gestione Ruoli:** Accesso differenziato e dashboard dedicate per Ascoltatori, Autori e Amministratori.
-- **Rating:** Valutazioni specifiche degli utenti su voce, testo e base musicale con classifiche generate dinamicamente.
-- **Architettura Solida:** Sviluppata in Java con pattern MVC e pattern DAO per la persistenza dei dati.
-- **Sicurezza Integrata:** Password degli account protette tramite hashing con algoritmo BCrypt.
+- **Role-Based Access Control (RBAC):** Dedicated dashboards and permission sets for Listeners, Creators, and Administrators.
+- **Multi-Dimensional Rating System:** Granular song evaluations across three distinct parameters (Vocals, Lyrics, Production/Beat) with dynamically generated leaderboards.
+- **Robust Architecture:** Clean Model-View-Controller (MVC) pattern coupled with the Data Access Object (DAO) pattern to decouple business logic from persistence.
+- **Optimized SQL Analytics:** Advanced queries using aggregation functions, `GROUP BY`, and `HAVING` clauses for real-time statistical insights.
+- **Secure Authentication:** Account passwords hashed and salted via the BCrypt cryptographic algorithm.
 
-## ℹ️ Panoramica
+## ℹ️ Overview
 
-**Musicality** è un'applicazione desktop per lo streaming di contenuti multimediali. Nata con l'obiettivo di applicare solide logiche di ingegneria del software, la piattaforma gestisce un database relazionale complesso e offre agli utenti la possibilità di creare playlist, caricare brani o podcast e interagire tramite un sistema di recensioni dettagliato. L'intero sistema è supportato da query SQL native e ottimizzate per l'analisi dei dati (utilizzando funzioni di aggregazione, GROUP BY e HAVING).
+**Musicality** is an engineering-driven desktop media streaming application. Designed to model complex relational database workflows, the platform enables users to stream music and podcasts, curate custom playlists, manage subscription tiers, and submit detailed multi-criteria reviews.
 
-## 🚀 Utilizzo
-
-Trattandosi di un'applicazione con interfaccia grafica sviluppata in JavaFX, l'interazione avviene interamente tramite UI. Dopo aver avviato l'applicazione, potrai:
-
-1. Registrarti scegliendo il ruolo di **Ascoltatore** o **Autore**.
-2. Esplorare i contenuti tramite il sistema di Tag e sottoscrivere piani di abbonamento.
-3. Consultare le classifiche in tempo reale (Top 50 Artisti, Top 50 Canzoni, ecc.).
-4. Se sei un Amministratore, accedere al pannello di moderazione per gestire segnalazioni e approvare i testi.
+The application is built on top of native, optimized MySQL queries without the overhead of heavy ORMs, ensuring predictable performance and explicit transaction management.
 
 <img src="https://github.com/user-attachments/assets/1db61559-fb35-4955-88aa-bd80ac19d585" width="400"/>
 
-## ⬇️ Installazione e Utilizzo
+## 🚀 Core Features
 
-### 📋 Prerequisiti
-Prima di procedere, assicurati di avere configurato sul tuo sistema:
-- **Java JDK** (versione 17 o superiore).
-- **Maven** installato e configurato.
-- **MySQL** in esecuzione (il database deve essere prima inizializzato importando lo script `schema.sql` fornito nel progetto).
+- **Listener & Creator Workflows:** Sign up as an artist to upload tracks and lyrics, or as a listener to discover new releases and follow creators.
+- **Tag-Based Discovery & Subscriptions:** Browse media categorized by custom genres/tags and simulate subscription plan management.
+- **Live Leaderboards:** View dynamic rankings (Top 50 Artists, Top 50 Songs) computed directly from the rating engine.
+- **Moderation Dashboard:** Administrative interface for content moderation, lyrics approval, and community reports.
 
-### 🚀 Compilazione ed Esecuzione
-Segui questi semplici passaggi per avviare l'applicazione in locale:
+## 🛠️ Tech Stack & Architecture
 
-1. **Configura il Database:** Apri il file `Database.java`, inserisci le tue credenziali locali (username e password) per l'accesso a MySQL e salva il file.
-2. **Apri il Terminale:** Posizionati nella directory principale del progetto, ovvero dove è contenuto il file `pom.xml`.
-3. **Build del Progetto:** Per scaricare le dipendenze e compilare il progetto, esegui:
-   ```bash
+- **Language & UI:** Java 17+, JavaFX (FXML & CSS styling).
+- **Architecture Pattern:** Model-View-Controller (MVC) with Data Access Object (DAO) layer.
+- **Persistence & Database:** MySQL 8.0, JDBC (native prepared statements and connection management).
+- **Security:** JBCrypt password hashing.
+- **Build & Dependency Management:** Apache Maven.
+
+## 💻 Developer Setup
+
+### Prerequisites
+- **Java JDK 17** or higher installed and configured.
+- **Apache Maven 3.8+**.
+- **MySQL Server** running locally.
+
+### Installation & Execution
+
+1. Clone the repository:
+   git clone https://github.com/Leon7-cmd/musicality.git
+   cd musicality
+
+2. Initialize the database schema:
+   Import the provided SQL schema into your local MySQL instance:
+   mysql -u root -p < schema.sql
+
+3. Configure database credentials:
+   Open `Database.java`, enter your local MySQL credentials (username and password), and save the file.
+
+4. Build the project with Maven:
    mvn clean install
+
+5. Run the desktop application:
+   mvn javafx:run
+
+## 📄 License
+
+Distributed under the MIT License. See the [LICENSE](LICENSE) file for details.
